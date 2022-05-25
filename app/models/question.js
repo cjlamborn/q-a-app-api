@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const answerSchema = require('./answer')
+
 const questionSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -17,13 +19,13 @@ const questionSchema = new mongoose.Schema({
   }
 }, {
   timestamps: true,
-   toObject: {
-      // remove `hashedPassword` field when we call `.toObject`
-      transform: (_doc, user) => {
-        delete user.hashedPassword
-        return user
-      }
+  toObject: {
+    // remove `hashedPassword` field when we call `.toObject`
+    transform: (_doc, user) => {
+      delete user.hashedPassword
+      return user
     }
+  }
 })
 
 module.exports = mongoose.model('Question', questionSchema)

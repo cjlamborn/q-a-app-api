@@ -4,21 +4,21 @@ const answerSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true
-  },
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
   }
+  // owner: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'User',
+  //   required: true
+  // }
 }, {
   timestamps: true,
   toObject: {
-      // remove `hashedPassword` field when we call `.toObject`
-      transform: (_doc, user) => {
-        delete user.hashedPassword
-        return user
-      }
+    // remove `hashedPassword` field when we call `.toObject`
+    transform: (_doc, user) => {
+      delete user.hashedPassword
+      return user
     }
+  }
 })
 
 module.exports = answerSchema

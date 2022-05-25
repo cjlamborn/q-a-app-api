@@ -33,7 +33,6 @@ router.get('/questions', requireToken, (req, res, next) => {
 
 // SHOW
 router.get('/questions/:id', requireToken, (req, res, next) => {
-
   Question.findById(req.params.id)
     .then(handle404)
     // if `findById` is successful, respond with 200 and "example" JSON
@@ -77,7 +76,7 @@ router.patch('/questions/:id', requireToken, removeBlanks, (req, res, next) => {
     .catch(next)
 })
 
-// DELETE 
+// DELETE
 router.delete('/questions/:id', requireToken, (req, res, next) => {
   Question.findById(req.params.id)
     .then(handle404)
