@@ -42,15 +42,9 @@ router.post('/answers', requireToken, (req, res, next) => {
 router.delete('/questions/:qid/answers/:answerId', requireToken, (req, res, next) => {
   const questionId = req.params.qid
   const answerId = req.params.answerId
-  console.log('IN DELETE ROUTE')
-  console.log(answerId)
-  console.log(questionId)
-  // console.log(req)
-  console.log('IN DELETE ROUTE')
   Question.findById(questionId)
     .then(handle404)
     .then((question) => {
-      console.log(question)
       // throw an error if current user doesn't own `example`
       requireOwnership(req, question)
       // delete the example ONLY IF the above didn't throw
@@ -66,7 +60,6 @@ router.delete('/questions/:qid/answers/:answerId', requireToken, (req, res, next
 // UPDATE
 // PATCH /examples/5a7db6c74d55bc51bdf39793
 router.patch('/questions/:qid/answers', requireToken, (req, res, next) => {
-  console.log(req.body)
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
   const questionId = req.params.qid

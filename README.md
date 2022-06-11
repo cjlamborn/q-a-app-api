@@ -20,7 +20,7 @@ This Q & A App allows users to sign up and sign in, and post questions, see thos
 - [Client Repo](https://github.com/cjlamborn/q-a-app-client)
 - [API Repo](https://github.com/cjlamborn/q-a-app-api)
 - [Deployed API](https://desolate-tor-37361.herokuapp.com/)
-- [Deployed Client]()
+- [Deployed Client](https://cjlamborn.github.io/q-a-app-client/)
 
 ## ERD 
 
